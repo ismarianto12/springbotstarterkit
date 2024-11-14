@@ -8,6 +8,12 @@ public class ConfigApp {
 
     public String Hostname;
     public String Port;
+    public String getApidev;
+
+    @Value("${app.demoApi}")
+    public void setApidev(String apidev) {
+        this.getApidev = apidev;
+    }
 
     @Value("${app.hostname}")
     public void setHost(String host) {
@@ -25,5 +31,9 @@ public class ConfigApp {
 
     public String getPort() {
         return Port;
+    }
+
+    public String getApidev() {
+        return getApidev;
     }
 }
