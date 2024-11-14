@@ -9,6 +9,12 @@ public class ConfigApp {
     public String Hostname;
     public String Port;
     public String getApidev;
+    public String ApiKey;
+
+    @Value("${app.ApiStaticsKey}")
+    public void setApiKey(String apiKey) {
+        this.ApiKey = apiKey;
+    }
 
     @Value("${app.demoApi}")
     public void setApidev(String apidev) {
@@ -35,5 +41,8 @@ public class ConfigApp {
 
     public String getApidev() {
         return getApidev;
+    }
+    public String getApiKey() {
+        return ApiKey;
     }
 }
